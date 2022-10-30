@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Stack, IconButton } from '@mui/material'
+import { Button, Stack, IconButton, ButtonGroup } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send';
 
 const MuiButton = () => {
@@ -7,8 +7,10 @@ const MuiButton = () => {
     /***
      * Stack display elements as flex column by default
      * Use IconButton to make icon as button
+     * Use ButtonGroup to group all buttons as a group; button styles can be decided in ButtonGroup props
      */
     <Stack spacing={4}>
+      {/* Button style */}
       <Stack direction='row' spacing={2}>
         <Button variant='text'>Text</Button>
         <Button variant='contained'>Contained</Button>
@@ -27,12 +29,29 @@ const MuiButton = () => {
         <Button variant='contained' size='medium'>medium</Button>
         <Button variant='contained' size='large'>large</Button>
       </Stack>
+
+      {/* Button & Icon */}
       <Stack direction='row' spacing={2}>
         <Button variant='contained' startIcon={<SendIcon />} disableRipple>Send</Button>
         <Button variant='contained' endIcon={<SendIcon />} disableElevation>Send</Button>
         <IconButton aria-label='send' color='error' onClick={() => alert('Click')}>
           <SendIcon />
         </IconButton>
+      </Stack>
+
+      {/* Button Group */}
+      <Stack direction='row'>
+        <ButtonGroup
+          variant='contained'
+          color='warning'
+          orientation='vertical'
+          size='small'
+          aria-label = 'align button group'
+        >
+          <Button onClick={() => alert('Left')}>Left</Button>
+          <Button>Center</Button>
+          <Button>Right</Button>
+        </ButtonGroup>
       </Stack>
     </Stack>
   )
