@@ -1,8 +1,17 @@
-import React from 'react'
-import { Button, Stack, IconButton, ButtonGroup } from '@mui/material'
+import React, { useState } from 'react'
+import { Button, Stack, IconButton, ButtonGroup, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send';
+import FormatBoldIcon from '@mui/icons-material/FormatBold';
+import FormatItalicIcon from '@mui/icons-material/FormatItalic';
+import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
 
 const MuiButton = () => {
+  const [formats, setFormats] = useState<string[]>([]);
+
+  const handleFormatChange = (event: React.MouseEvent<HTMLElement>, updatedFormats: string[]) => {
+    setFormats(updatedFormats);
+  }
+
   return (
     /***
      * Stack display elements as flex column by default
@@ -52,6 +61,33 @@ const MuiButton = () => {
           <Button>Center</Button>
           <Button>Right</Button>
         </ButtonGroup>
+      </Stack>
+
+      {/* Toggle Button Group */}
+      {/***
+       * ToggleButtonGroup controls all value change of each Toggle Button
+       * Value prop of ToggleButton is compulsory, value's contents are whatever you set
+       * Exclusive prop of ToggleButtonGroup decides single or multiple selection
+       */}
+      <Stack direction='row'>
+        <ToggleButtonGroup
+          aria-label='text formatting'
+          color='success'
+          onChange={handleFormatChange}
+          orientation='vertical'
+          value={formats}
+          exclusive
+        >
+          <ToggleButton value='bold'>
+            <FormatBoldIcon />
+          </ToggleButton>
+          <ToggleButton value='italic'>
+            <FormatItalicIcon />
+          </ToggleButton>
+          <ToggleButton value='underlined'>
+            <FormatUnderlinedIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Stack>
     </Stack>
   )
