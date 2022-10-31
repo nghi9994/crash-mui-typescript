@@ -3,11 +3,11 @@ import { Box, Grid, Stack, Divider } from '@mui/material'
 
 const MuiLayout = () => {
   return (
-    /***
-    * Stack create Flex display
-    * Use 'flexItem' prop for Divider in flex container for right height
-    */
     <>
+      {/***
+      * Stack create Flex display
+      * Use 'flexItem' prop for Divider in flex container for right height
+      */}
       <Stack
         sx={{ border: '1px solid', justifyContent:' space-between' }}
         direction='row'
