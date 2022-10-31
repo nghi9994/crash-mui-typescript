@@ -7,6 +7,9 @@ import MuiSelect from './components/MuiSelect';
 import MuiRadioButton from './components/MuiRadioButton';
 import MuiCheckbox from './components/MuiCheckbox';
 import MuiLayout from './components/MuiLayout';
+import MuiCard from './components/MuiCard';
+
+import Practice from './pages/practice/Practice';
 
 function App() {
   return (
@@ -17,7 +20,9 @@ function App() {
       {/* <MuiSelect /> */}
       {/* <MuiRadioButton /> */}
       {/* <MuiCheckbox /> */}
-      <MuiLayout />
+      {/* <MuiLayout /> */}
+      <MuiCard />
+      {/* <Practice /> */}
     </div>
   );
 }
