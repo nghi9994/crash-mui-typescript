@@ -1,9 +1,13 @@
 import React from 'react'
-import { Box, Grid, Stack, Divider } from '@mui/material'
+import { Box, Divider, Grid, Paper, Stack  } from '@mui/material'
 
 const MuiLayout = () => {
   return (
-    <>
+    /***
+     * <Paper> component creates block with white background
+     * 'elevation' prop creates shadow for this block
+     * */
+    <Paper sx={{padding: '32px'}} elevation={10}>
       {/***
       * Stack create Flex display
       * Use 'flexItem' prop for Divider in flex container for right height
@@ -70,7 +74,7 @@ const MuiLayout = () => {
           <Box bgcolor='primary.light' p={2}>Box 4</Box>
         </Grid>
       </Grid>
-    </>
+    </Paper>
   )
 }
 
