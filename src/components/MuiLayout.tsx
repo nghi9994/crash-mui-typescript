@@ -1,9 +1,18 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Stack, Divider } from '@mui/material'
 
 const MuiLayout = () => {
   return (
-    <>
+    /***
+     * Stack create Flex display
+     * Use 'flexItem' prop for Divider in flex container for right height
+     */
+    <Stack
+      sx={{ border: '1px solid', justifyContent:' space-between' }}
+      direction='row'
+      // spacing={2}
+      divider={<Divider flexItem orientation='vertical' />}
+    >
       {/* Box component with 'sx' prop */}
       <Box
         sx={{
@@ -31,7 +40,7 @@ const MuiLayout = () => {
       >
         Code evolution
       </Box>
-    </>
+    </Stack>
   )
 }
 
